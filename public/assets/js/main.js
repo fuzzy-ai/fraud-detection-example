@@ -57,6 +57,29 @@ $(function() {
       inputs['phoneDistance'] =  google.maps.geometry.spherical.computeDistanceBetween(billingGeo, phoneGeo) / 1000;
     }
 
+    if ($('#purchase-price').val() && $('#avg-price').val()) {
+      inputs['priceDifference'] = $('#purchase-price').val() - $('#avg-price').val();
+    }
+
+    switch ($('#shipping-option').val()) {
+      case 'standard':
+        inputs['shippingOption'] = 1;
+        break;
+      case 'express':
+        inputs['shippingOption'] = 10;
+        break;
+      case 'next_day':
+      inputs['shippingOption'] = 20;
+      break;
+    }
+
+    if ($('#ip-transactions').val()) {
+      inputs['numberPreviousFromIP'] = parseInt($('#ip-transactions').val());
+    }
+
+    if ($('#address-transactions').val()) {
+      inputs['numberPreviousShipping'] = parseInt($('#address-transactions').val());
+    }
 
     $.ajax({
       method: "POST",
@@ -64,6 +87,7 @@ $(function() {
       data: JSON.stringify(inputs),
       contentType: 'application/json',
       success: function(data) {
+        lastEvalID = data.evaluation.meta.reqID;
         console.log(data);
       }
     });

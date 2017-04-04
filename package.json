@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "An exmaple Fuzzy.ai application to simulate intelligent fraud detection for credit card transactions",
   "scripts": {
-    "build": "coffee -c -o lib src && coffee -c test",
+    "install": "coffee -c -o lib src && webpack -p",
     "clean": "rm -rf lib/* test/*.js",
     "dev": "coffee -r dotenv/config -w src/main.coffee",
     "start": "node lib/main.js",
@@ -12,7 +12,6 @@
   "author": "James Walker <walkah@walkah.net>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "coffeescript": "^1.12.4",
     "dotenv": "^4.0.0",
     "perjury": "^0.4.3",
     "webpack-dev-middleware": "^1.10.1",
@@ -20,6 +19,7 @@
   },
   "dependencies": {
     "autoprefixer": "^6.7.7",
+    "coffeescript": "^1.12.4",
     "css-loader": "^0.28.0",
     "debug": "^2.6.3",
     "express": "^4.15.2",

@@ -41,9 +41,12 @@ class FraudDetectionServer extends Microservice
 
     exp.use express.static path.join(__dirname, '..', 'public')
 
+  setupParams: (exp) ->
+    exp.param 'evaluationID', @evaluationID
+
   setupRoutes: (exp) ->
     exp.post '/data/evaluate', @_evaluate
-    exp.post '/data/feedback', @_feedback
+    exp.post '/data/feedback/:evaluationID', @_feedback
 
   startDatabase: (callback) ->
     callback null
@@ -64,6 +67,10 @@ class FraudDetectionServer extends Microservice
     else
       callback null
 
+  evaluationID: (req, res, next, id) ->
+    req.evaluationID = id
+    next()
+
   _evaluate: (req, res, next) ->
     client = req.app.apiClient
     config = req.app.config
@@ -78,7 +85,7 @@ class FraudDetectionServer extends Microservice
 
   _feedback: (req, res, next) ->
     client = req.app.apiClient
-    client.feedback evalID, req.body, (err, feedback) ->
+    client.feedback req.evaluationID, req.body, (err, feedback) ->
       if err
         next err
       res.json

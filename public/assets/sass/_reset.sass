@@ -1,0 +1,112 @@
+/*Basic Sass reset*/
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+
+html
+  font-family: sans-serif
+  line-height: 1.15
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+*
+  box-sizing: border-box
+
+// HTML5 display-role reset for older browsers not sure why we bother... )
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+button
+  border: none
+  background: none
+
+
+//Form
+label,
+button,
+input,
+select,
+textarea
+  font-family: inherit
+  font-size: 100%
+  margin: 0
+
+
+button,
+input
+  line-height: normal
+
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  -webkit-appearance: button
+  -moz-appearance: button
+  cursor: pointer
+
+
+
+// Re-set default cursor for disabled elements.
+button[disabled],
+html input[disabled]
+  cursor: default
+
+
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+::selection
+  text-shadow: none
+
+// Improves readability of pre-formatted text in all browsers.
+pre
+  white-space: pre-wrap
+
+// Sets consistent quote types.
+q
+  quotes: "\201C" "\201D" "\2018" "\2019"
+
+// Addresses inconsistent and variable font size in all browsers.
+small
+  font-size: 80%
+
+// Prevents `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sup
+  top: -0.5em
+
+sub
+  bottom: -0.25em

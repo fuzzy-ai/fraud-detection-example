@@ -1,0 +1,272 @@
+@import "reset"
+
+=centerer
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+
+html
+  height: 100%
+  width: 100%
+  background: #57546c
+
+body
+  background: #FDFDFD
+  font-family: "proxima-nova", "Proxima Nova", helvetica, arial
+  letter-spacing: .5px
+  font-size: 16px
+  line-height: 1.8
+  color: #57546c
+  overflow-x: hidden
+  margin: 10px
+  padding: 80px 80px
+
+a
+  color: #EB4F48
+  text-decoration: none
+  transition: color .3s ease-in
+  &:hover
+    color: #57546c
+
+.logo
+  img
+    width: 100px
+
+.arrow
+  fill: transparent
+  width: 12px
+  height: 12px
+  stroke: #57546c
+  stroke-width: 4
+  opacity: 0
+  transform: translateX(0px)
+  transition: all .3s ease-in-out
+
+
+
+.signup
+  position: absolute
+  top: 40px
+  right: 60px
+  text-transform: uppercase
+  font-weight: 400
+  letter-spacing: 2px
+  transition: all .3s ease-in-out
+  &:hover
+    .arrow
+      transform: translateX(10px)
+      opacity: 1
+
+
+
+h3
+  font-size: 16px
+  letter-spacing: 0.5px
+  margin: 20px 0
+  font-weight: 700
+
+
+.intro
+  width: 50%
+  margin-bottom: 44px
+  h1
+    font-size: 84px
+    text-transform: uppercase
+    font-weight: 900
+    letter-spacing: -2px
+    line-height: .9em
+    margin-bottom: 22px
+
+
+
+.fuz-wrapper
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+
+
+.pane
+  display: flex
+  flex: 1
+  padding: 20px 50px
+
+
+.credit-card
+  background: darken(#f0ecf8, .5%)
+  background: #e3ddef
+  background: lighten(#A79EBC, 10%)
+  background: #cccdde
+  background: #dcdeea
+  background: #e4e5ed
+
+  //background: lighten(#A79EBC, 10%)
+  border-right: 1px solid #fff
+  h3
+    &::before
+      content: ""
+      background: #EB4F48
+      height: 1px
+      width: 18px
+      display: inline-block
+      margin-right: 4px
+
+.results
+  // background: #a79ebc
+  // background: #f8f7fa
+  background: #f8f7fa
+  //background: #F1EEF9
+
+
+form
+  display: flex
+  flex: 1
+  flex-direction: column
+  color: #57546c
+  font-size: 14px
+
+  .input-wrap
+    position: relative
+    float: left
+    background: #e4e5ed
+
+    input
+      padding: 2.75em 20px 2em
+      position: relative
+      width: 100%
+      border: none
+      margin: 0 0 1px
+      background: lighten(#f8f7fa, 1%)
+      color: #A79EBC
+
+
+    label
+      position: absolute
+      top: 10px
+      left: 20px
+      color: lighten(#57546c, 2%)
+      z-index: 100
+      font-size: 8px
+      text-transform: uppercase
+      letter-spacing: 2px
+      transform: translate3d(0, 0, 0)
+      transition: all 0.2s ease-in-out
+
+.input-wrap-1of3
+  width: 33.33%
+  border-right: 1px solid #e4e5ed
+
+.input-wrap-2of3
+  display: flex
+  float: left
+  width: 66.66%
+
+
+.small-input-1of3
+  width: 33%
+
+
+.small-input-2of3
+  width: 67%
+  margin-left: 1px
+
+.small-input-1of2
+  width: 50%
+
+
+
+//BTN STYLES
+.btn
+  background: #A79EBC
+  border: 1px solid darken(#A79EBC, 2.5%)
+  color: #FDFDFD
+  font-size: 12px
+  padding: 1.2rem 5rem
+  text-transform: uppercase
+  letter-spacing: .2em
+  font-weight: 400
+  margin: 20px 0 20px 0
+  transition: all .3s ease-in
+  //align-self: center
+  &:hover
+    box-shadow: 0 0 0 5px #c2bcd1 inset, 0 0 0 150px rgba(0,0,0,0.15) inset
+    border-color: #FDFDFD
+    color: lighten(#e4e5ed, 5%)
+
+
+
+::-webkit-input-placeholder  /* Chrome/Opera/Safari */
+  color: lighten(#57546c, 35%)
+  font-size: 10px
+  letter-spacing: 2px
+
+::-moz-placeholder  /* Firefox 19+ */
+  color: lighten(#57546c, 35%)
+  font-size: 10px
+  letter-spacing: 2px
+
+
+input:focus
+  outline: none
+  background: #fff !important
+  + label
+    transform: translate3d(0, -5px, 0)
+    color: lighten(#57546c, 35%)
+    opacity: 0.75
+    font-size: 7px
+
+
+
+footer
+  padding: 0px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  position: relative
+  .copyright
+    margin-bottom: 0px
+    padding: 20px 50px
+    font-size: 10px
+    letter-spacing: 2px
+    line-height: 40px
+    text-transform: uppercase
+    a
+      font-weight: 700
+
+
+
+
+.social-footer-links
+  display: flex
+  flex-direction: row
+
+.box-icon
+  width: 80px
+  height: 80px
+  position: relative
+  display: inline-block
+  background: #A79EBC
+  background: #f8f7fa
+  border-left: 1px solid #fff
+  margin-top: 1px
+  transition: background .3s ease-in-out, color .4s ease-in
+  overflow: hidden
+  &:hover
+    background: #fff
+    svg
+      fill: #eb4f48
+
+.social-icon
+  @include centerer
+  width: 24px
+  height: 24px
+  fill: #A79EBC
+
+//sass --watch assets/sass/app.sass:main.css
+//sass --watch app.sass:main.css
+//sass app.sass main.css
+//sass --watch /assets/sass/app.sass main.css
+.angel-icon
+  width: 20px

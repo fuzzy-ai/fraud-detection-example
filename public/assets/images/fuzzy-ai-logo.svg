@@ -1,0 +1,18 @@
+<svg id="Layer_1_copy" data-name="Layer 1 copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2.86in" height="1.03in" viewBox="0 0 205.77 73.93">
+  <defs>
+  <style>
+    .cls-1{fill:url(#linear-gradient);}
+    .cls-2{fill:url(#linear-gradient-2);}
+    .cls-3{fill:url(#linear-gradient-3);}
+    .cls-4{fill:url(#linear-gradient-4);}
+    .cls-5{fill:url(#linear-gradient-5);}
+    .cls-6{fill:url(#linear-gradient-6);}
+    .cls-7{fill:url(#linear-gradient-7);}
+  </style>
+  <linearGradient id="linear-gradient" x1="23.1" y1="78.02" x2="61.81" y2="50.92" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#eb4f48"/><stop offset="1" stop-color="#eb4f48"/>
+</linearGradient><linearGradient id="linear-gradient-2" x1="57.07" y1="85.75" x2="93.4" y2="60.31" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-3" x1="91.73" y1="86.74" x2="128.61" y2="60.91" xlink:href="#linear-gradient"/>
+<linearGradient id="linear-gradient-4" x1="124.91" y1="86.74" x2="161.79" y2="60.91" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-5" x1="159.62" y1="91.35" x2="202.72" y2="61.17" xlink:href="#linear-gradient"/>
+<linearGradient id="linear-gradient-6" x1="201.46" y1="67.51" x2="223.41" y2="52.15" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-7" x1="219.6" y1="61.94" x2="239.86" y2="47.76" xlink:href="#linear-gradient"/></defs><title>fuzzy-ai-logo</title>
+<path class="cls-1" d="M27.54,56.71l5.83-1.19V48.59c0-6.36,2.56-10.92,11-10.92a23.67,23.67,0,0,1,9.38,1.68v5.82L47,45.1c-3.94-.07-3.85,1.9-3.85,5.8v4.62h8.44V63H43.17V92.69h-9.8V63H27.54v-6.3Z" transform="translate(-27.54 -37.67)"/>
+<path class="cls-2" d="M57.35,55.52h9.8v24.9c0,3.7,1.65,5,4.11,5,3.95,0,6.1-1,9-3.22V55.52H90V92.69H82.17l-1.92-4c-3.69,2.22-6.13,4.58-11.8,4.58-8.65,0-11.1-6-11.1-13.06V55.52Z" transform="translate(-27.54 -37.67)"/><path class="cls-3" d="M94.8,55.52h30v8.26L108.92,84.36h15.92c0.07,0.07,0,8.26,0,8.26h-29V84.44l16.69-20.66H94.8V55.52Z" transform="translate(-27.54 -37.67)"/><path class="cls-4" d="M128,55.52h30v8.26L142.1,84.36H158c0.07,0.07,0,8.26,0,8.26H129V84.44l16.69-20.66H128V55.52Z" transform="translate(-27.54 -37.67)"/><path class="cls-5" d="M171,55.52l6.41,26a3.36,3.36,0,0,0,3.74,2.73l7.45-28.74h10.2l-12.88,48.94-5.1,7.14h-7L179,92.69c-5.17,0-9.25-2.6-11.06-9.47l-7.29-27.7H171Z" transform="translate(-27.54 -37.67)"/><path class="cls-6" d="M201.43,63c0-3.63,2-6.85,7.31-6.85,0,0,7.33,0,7.33,0s0-1.55,0-1.6c0-2.66-1.25-3.08-3.34-3.08s-8.43.39-10.48,0.54V47.94c3.29-1.28,6.72-1.65,11.37-1.67,5.37,0,9,1.83,9,8V71.69h-5.2l-1.38-2.75c-0.28.54-3.78,3.11-7.59,3-4.8-.13-7.05-3.4-7.05-6.64V63Zm8.91,3.71a12.62,12.62,0,0,0,5.73-1.93V60.18l-6,.47c-1.74.16-2,1.45-2,2.54V64.4C208,66.48,209.14,66.69,210.35,66.69Z" transform="translate(-27.54 -37.67)"/><path class="cls-7" d="M226.19,38.87a1.05,1.05,0,0,1,1.13-1.17h4.93a1,1,0,0,1,1.05,1.17V43a1,1,0,0,1-1.05,1.08h-4.93A1,1,0,0,1,226.19,43V38.87Zm0.24,7.87H233v25h-6.58v-25Z" transform="translate(-27.54 -37.67)"/></svg>

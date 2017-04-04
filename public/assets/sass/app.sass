@@ -68,14 +68,14 @@ h3
   font-size: 16px
   letter-spacing: 0.5px
   margin: 0 0 22px
-  font-weight: 700
-  &::before
+  font-weight: 500
+  &::after
     content: ""
     background: #EB4F48
     height: 1px
     width: 18px
     display: inline-block
-    margin-right: 4px
+    margin-left: 4px
 
 input[type=number]
   -moz-appearance: textfield
@@ -83,6 +83,7 @@ input[type=number]
 input[type="number"]:hover,
 input[type="number"]:focus
   -moz-appearance: number-input
+
 
 
 .intro
@@ -131,6 +132,37 @@ input[type="number"]:focus
 .results
   flex-direction: column
   background: #f8f7fa
+
+#results-value
+  // font-size: 24px
+  // font-weight: 900
+
+#results-description
+  display: flex
+  flex-directrion: row
+  background: #fff
+  margin-bottom: 22px
+  p
+    flex: 1 0 80%
+    padding: 20px
+    font-size: 14px
+    margin: 0
+
+
+#big-num-wrapper
+  flex: 1 0 20%
+  display: flex
+  padding: 0 20px
+  font-size: 44px
+  font-weight: 900
+  border-right: 2px solid #F8F7FA
+  #big-num
+    display: flex
+    align-items: center;
+    justify-content: center;
+    line-height: 44px
+
+
 
 .radio-wrap
   width: 50%

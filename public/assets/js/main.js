@@ -93,6 +93,7 @@ $(function() {
         lastEvalID = data.evaluation.meta.reqID;
         var likelihood = parseInt(data.evaluation.likelihood);
         $('#results-value').html(likelihood);
+        $('#big-num span').html(likelihood);
         $('#results-description').show();
         $('#feedback').show();
       }

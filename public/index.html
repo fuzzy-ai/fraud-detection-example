@@ -69,7 +69,6 @@
         </div>
 
         <button class="btn" type="submit">Submit</button>
-        <!-- <button class="btn" type="cancel">cancel</button> -->
       </form>
     </div>
     <div class="results pane">
@@ -80,10 +79,16 @@
       <div id="feedback">
         <h3>Help train this agent!</h3>
         <form id="feedback-form" method="post">
-          <p>Was this intended as a fraudulent transaction?</p>
+          <p>Was this intended as a <strong>fraudulent transaction?</strong></p>
           <div class="input-wrap">
-            <input type="radio" name="feedback" value="0">No
-            <input type="radio" name="feedback" value="100">Yes
+            <div class="radio-wrap">
+              <input type="radio" name="feedback" value="0">
+              <span>No</span>
+            </div>
+            <div class="radio-wrap">
+              <input type="radio" name="feedback" value="100">
+              <span>Yes</span>
+            </div>
           </div>
           <button type="submit" class="btn">Send</button>
         </form>

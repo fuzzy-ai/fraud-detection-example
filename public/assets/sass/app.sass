@@ -23,6 +23,9 @@ body
   margin: 10px
   padding: 80px 80px
 
+p
+  margin-bottom: 22px
+
 a
   color: #EB4F48
   text-decoration: none
@@ -64,8 +67,22 @@ a
 h3
   font-size: 16px
   letter-spacing: 0.5px
-  margin: 20px 0
+  margin: 0 0 22px
   font-weight: 700
+  &::before
+    content: ""
+    background: #EB4F48
+    height: 1px
+    width: 18px
+    display: inline-block
+    margin-right: 4px
+
+input[type=number]
+  -moz-appearance: textfield
+
+input[type="number"]:hover,
+input[type="number"]:focus
+  -moz-appearance: number-input
 
 
 .intro
@@ -91,7 +108,7 @@ h3
 .pane
   display: flex
   flex: 1
-  padding: 20px 50px
+  padding: 40px
 
 
 .credit-card
@@ -101,8 +118,6 @@ h3
   background: #cccdde
   background: #dcdeea
   background: #e4e5ed
-
-  //background: lighten(#A79EBC, 10%)
   border-right: 1px solid #fff
   h3
     &::before
@@ -114,11 +129,19 @@ h3
       margin-right: 4px
 
 .results
-  // background: #a79ebc
-  // background: #f8f7fa
+  flex-direction: column
   background: #f8f7fa
-  //background: #F1EEF9
 
+.radio-wrap
+  width: 50%
+  float: left
+  border: 1px solid #f8f7fa
+  padding: 1em
+  input
+    display: inline-block
+    width: 20px !important
+  span
+    margin-left: 4px
 
 form
   display: flex
@@ -141,6 +164,22 @@ form
       background: lighten(#f8f7fa, 1%)
       color: #A79EBC
 
+    select
+      outline: none
+      padding: 2.75em 20px 2em
+      position: relative
+      width: 100%
+      border: none
+      margin: 0 0 1px
+      background: lighten(#f8f7fa, 1%) URL('./images/arrow-down.svg') no-repeat 97% center
+      background-size: 4%
+      color: #A79EBC
+      -webkit-appearance: none
+      -moz-appearance: none
+      border-radius: none
+
+    option
+      padding: .5em .25em
 
     label
       position: absolute

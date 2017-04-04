@@ -5,6 +5,9 @@ var IPGeo;
 var phoneGeo;
 
 $(function() {
+  $('#results-description').hide();
+  $('#feedback').hide();
+
   var billing = document.getElementById('billing-address');
   var autocompleteBilling = new google.maps.places.Autocomplete(billing);
   autocompleteBilling.addListener('place_changed', function() {
@@ -88,9 +91,28 @@ $(function() {
       contentType: 'application/json',
       success: function(data) {
         lastEvalID = data.evaluation.meta.reqID;
-        console.log(data);
+        var likelihood = parseInt(data.evaluation.likelihood);
+        $('#results-value').html(likelihood);
+        $('#results-description').show();
+        $('#feedback').show();
       }
     });
   });
 
+  $('#feedback-form').submit(function(e) {
+    e.preventDefault();
+    var likelihood = parseInt($('input[type=radio]:checked').val());
+    if (lastEvalID && likelihood) {
+      var feedback = {likelihood: likelihood}
+      $.ajax({
+        method: "POST",
+        url: "/data/feedback/" + lastEvalID,
+        data: JSON.stringify(feedback),
+        contentType: 'application/json',
+        success: function(data) {
+          alert('Thanks for the feedback!');
+        }
+      });
+    }
+  });
 });

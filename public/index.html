@@ -73,7 +73,21 @@
       </form>
     </div>
     <div class="results pane">
-      <h3>Calculated Results</h3>
+      <h3>Results</h3>
+      <div id="results-description">
+        <p>Based on your inputs, there is a <span id="results-value"></span>% chance this transaction was fraudulent.</p>
+      </div>
+      <div id="feedback">
+        <h3>Help train this agent!</h3>
+        <form id="feedback-form" method="post">
+          <p>Was this intended as a fraudulent transaction?</p>
+          <div class="input-wrap">
+            <input type="radio" name="feedback" value="0">No
+            <input type="radio" name="feedback" value="100">Yes
+          </div>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
     </div>
 
 </div><!-- end fuz wrapper -->

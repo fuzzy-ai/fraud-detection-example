@@ -1,0 +1,37 @@
+{
+  "name": "fraud-detection-example",
+  "version": "0.1.0",
+  "description": "An exmaple Fuzzy.ai application to simulate intelligent fraud detection for credit card transactions",
+  "scripts": {
+    "build": "coffee -c -o lib src && coffee -c test",
+    "clean": "rm -rf lib/* test/*.js",
+    "dev": "coffee -r dotenv/config -w src/main.coffee",
+    "start": "node lib/main.js",
+    "test": "perjury test/*-test.js"
+  },
+  "author": "James Walker <walkah@walkah.net>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "coffeescript": "^1.12.4",
+    "dotenv": "^4.0.0",
+    "perjury": "^0.4.3",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "css-loader": "^0.28.0",
+    "debug": "^2.6.3",
+    "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "fuzzy.ai": "^1.0.2",
+    "fuzzy.ai-microservice": "^1.1.0",
+    "fuzzy.ai-microservice-client": "^1.0.2",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.2",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3"
+  }
+}

@@ -6,6 +6,30 @@
   left: 50%
   transform: translate(-50%, -50%)
 
+//vars
+
+$purple: darken(#f0ecf8, .5%)
+$purple: #e3ddef
+$purple: lighten(#A79EBC, 10%)
+$purple: #cccdde
+$purple: #d4d4e1
+$purple: #dfdfeb
+$pruple: #e5e5ed
+$purple: #dcdeea
+$purple: #dee0ec
+$purple: #e6e7f0
+$purple: #E4E5ED
+$purple: darken(#E4E5ED, 2%)
+$purple: lighten(#C2BCD1, 12.5%)
+
+
+$grey: #f8f7fa
+$grey: #efecf4
+$grey: #f5f4f7
+//$grey: #F5F8FD
+
+$condensed: "brandon-grotesque", "refrigerator-deluxe", "Proxima-nova", sans-serif
+$text: "proxima-nova", "Proxima Nova", helvetica, arial
 
 html
   height: 100%
@@ -14,7 +38,7 @@ html
 
 body
   background: #FDFDFD
-  font-family: "proxima-nova", "Proxima Nova", helvetica, arial
+  font-family: $text
   letter-spacing: .5px
   font-size: 16px
   line-height: 1.8
@@ -27,6 +51,8 @@ p
   margin-bottom: 22px
 
 .accent
+  color: #D74755
+  &:hover
   color: #EB4F48
 
 a
@@ -71,14 +97,14 @@ h3
   font-size: 16px
   letter-spacing: 0.5px
   margin: 0 0 22px
-  font-weight: 500
-  &::after
+  font-weight: 600
+  &::before
     content: ""
     background: #EB4F48
     height: 1px
     width: 18px
     display: inline-block
-    margin-left: 4px
+    margin-right: 4px
 
 input[type=number]
   -moz-appearance: textfield
@@ -116,12 +142,7 @@ input[type="number"]:focus
 
 
 .credit-card
-  background: darken(#f0ecf8, .5%)
-  background: #e3ddef
-  background: lighten(#A79EBC, 10%)
-  background: #cccdde
-  background: #dcdeea
-  background: #e4e5ed
+  background: $purple
   border-right: 1px solid #fff
   h3
     &::before
@@ -134,7 +155,7 @@ input[type="number"]:focus
 
 .results
   flex-direction: column
-  background: #f8f7fa
+  background: $grey
 
 #results-value
   // font-size: 24px
@@ -144,25 +165,31 @@ input[type="number"]:focus
   display: flex
   flex-directrion: row
   background: #fff
-  margin-bottom: 22px
-  p
-    flex: 1 0 80%
+  margin-bottom: 44px
+  .results-description-text
+    flex: 0 0 80%
     padding: 20px
     font-size: 14px
-    margin: 0
+    background: $purple
+    border: 1px solid #fff
+    p
+      margin: 0
 
 
 #big-num-wrapper
-  flex: 1 0 20%
+  flex: 0 0 20%
   display: flex
-  padding: 0 20px
-  font-size: 44px
-  font-weight: 900
-  border-right: 2px solid #F8F7FA
+  padding: 0 10px
+  border-right: 2px solid $grey
+  justify-content: center
   #big-num
+    font-family: $condensed
+    font-size: 44px
+    letter-spacing: -2px
+    font-weight: 500
     display: flex
-    align-items: center;
-    justify-content: center;
+    align-items: center
+    justify-content: center
     line-height: 44px
 
 
@@ -170,7 +197,7 @@ input[type="number"]:focus
 .radio-wrap
   width: 50%
   float: left
-  border: 1px solid #f8f7fa
+  border: 1px solid $grey
   padding: 1em
   input
     display: inline-block
@@ -188,7 +215,7 @@ form
   .input-wrap
     position: relative
     float: left
-    background: #e4e5ed
+    background: $purple
 
     input
       padding: 2.75em 20px 2em
@@ -196,7 +223,7 @@ form
       width: 100%
       border: none
       margin: 0 0 1px
-      background: lighten(#f8f7fa, 1%)
+      background: lighten($grey, 2%)
       color: #A79EBC
 
     select
@@ -206,7 +233,7 @@ form
       width: 100%
       border: none
       margin: 0 0 1px
-      background: lighten(#f8f7fa, 1%) URL('./images/arrow-down.svg') no-repeat 97% center
+      background: lighten($grey, 2%) URL('./images/arrow-down.svg') no-repeat 97% center
       background-size: 4%
       color: #A79EBC
       -webkit-appearance: none
@@ -214,7 +241,10 @@ form
       border-radius: none
 
     option
-      padding: .5em .25em
+      padding: .75em 20px
+      background: lighten($grey, 2%)
+      &:hover
+        background: $purple
 
     label
       position: absolute
@@ -230,7 +260,7 @@ form
 
 .input-wrap-1of3
   width: 33.33%
-  border-right: 1px solid #e4e5ed
+  border-right: 1px solid $purple
 
 .input-wrap-2of3
   display: flex
@@ -262,12 +292,13 @@ form
   letter-spacing: .2em
   font-weight: 400
   margin: 20px 0 20px 0
+  border-radius: 2px
   transition: all .3s ease-in
-  //align-self: center
+  font-family: $condensed
   &:hover
-    box-shadow: 0 0 0 5px #c2bcd1 inset, 0 0 0 150px rgba(0,0,0,0.15) inset
-    border-color: #FDFDFD
-    color: lighten(#e4e5ed, 5%)
+    box-shadow: 0 0 0 5px #c2bcd1 inset, 0 0 0 150px rgba(#57546c, .5) inset
+    border-color: darken(#A79EBC, 3%)
+    color: lighten(#dcdeea, 5%)
 
 
 
@@ -322,7 +353,7 @@ footer
   position: relative
   display: inline-block
   background: #A79EBC
-  background: #f8f7fa
+  background: $grey
   border-left: 1px solid #fff
   margin-top: 1px
   transition: background .3s ease-in-out, color .4s ease-in

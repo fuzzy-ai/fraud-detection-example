@@ -98,6 +98,9 @@ $(function() {
         $('#feedback').show();
       }
     });
+    $('html, body').animate({
+      scrollTop: $(".results").offset().top
+    }, 500);
   });
 
   $('#feedback-form').submit(function(e) {

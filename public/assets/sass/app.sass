@@ -8,26 +8,12 @@
 
 //vars
 
-$purple: darken(#f0ecf8, .5%)
-$purple: #e3ddef
-$purple: lighten(#A79EBC, 10%)
-$purple: #cccdde
-$purple: #d4d4e1
-$purple: #dfdfeb
-$pruple: #e5e5ed
-$purple: #dcdeea
-$purple: #dee0ec
-$purple: #e6e7f0
-$purple: #E4E5ED
-$purple: darken(#E4E5ED, 2%)
-$purple: lighten(#C2BCD1, 12.5%)
-
-
-$grey: #f8f7fa
-$grey: #efecf4
+//COLORS////////////////////////
+$light-purple: #E4E2EB
 $grey: #f5f4f7
-//$grey: #F5F8FD
+$main-bg: #FAFBF3
 
+//Typography///////////////////
 $condensed: "brandon-grotesque", "refrigerator-deluxe", "Proxima-nova", sans-serif
 $text: "proxima-nova", "Proxima Nova", helvetica, arial
 
@@ -37,7 +23,7 @@ html
   background: #57546c
 
 body
-  background: #FDFDFD
+  background: $main-bg
   font-family: $text
   letter-spacing: .5px
   font-size: 16px
@@ -53,6 +39,9 @@ p
 .accent
   color: #766A96
 
+.logo
+  display: block
+  margin-bottom: 2px
 
 a
   color: #EB4F48
@@ -105,15 +94,10 @@ h3
     display: inline-block
     margin-right: 4px
 
-input[type=number]
-  -moz-appearance: textfield
-
-input[type="number"]:hover,
-input[type="number"]:focus
-  -moz-appearance: number-input
 
 
 
+//PAGE INTRO///////////
 .intro
   width: 50%
   margin-bottom: 44px
@@ -141,7 +125,7 @@ input[type="number"]:focus
 
 
 .credit-card
-  background: $purple
+  background: $light-purple
   border-right: 1px solid #fff
   h3
     &::before
@@ -156,9 +140,6 @@ input[type="number"]:focus
   flex-direction: column
   background: $grey
 
-#results-value
-  // font-size: 24px
-  // font-weight: 900
 
 #results-description
   display: flex
@@ -169,8 +150,7 @@ input[type="number"]:focus
     flex: 0 0 80%
     padding: 20px
     font-size: 14px
-    background: $purple
-    //border: 1px solid #fff
+    background: $light-purple
     p
       margin: 0
 
@@ -179,8 +159,7 @@ input[type="number"]:focus
   flex: 0 0 20%
   display: flex
   padding: 0 10px
-  border: 1px solid $purple
-  //border-right: 2px solid $grey
+  border: 1px solid $light-purple
   justify-content: center
   #big-num
     font-family: $condensed
@@ -191,41 +170,7 @@ input[type="number"]:focus
     align-items: center
     justify-content: center
 
-
-.radio-wrap
-  width: 50%
-  float: left
-  border: 1px solid $grey
-  padding: 1.5em
-  background: $purple
-  input[type="radio"]
-    display: none
-
-  // span
-  //   margin-left: 4px
-
-input[type="radio"] + label em
-  display: inline-block
-  width: 22px
-  height: 22px
-  padding: 2px
-  margin: 0px 8px 0 0
-  vertical-align: middle
-  cursor: pointer
-  border-radius: 50%
-  border: 2px solid #a79ebc
-  float: left
-
-input[type="radio"] + label em
-  background-color: #fff
-  transition: background .3s ease-in
-
-input[type="radio"]:checked + label em
-  background-color: #9787bf
-  box-shadow: inset -1px 1px 1px rgba(black, 25%)
-  border: 2px solid darken(#a79ebc, 2.5%)
-  box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1);
-
+//FORM STYLES////////////////////////////
 
 form
   display: flex
@@ -237,7 +182,7 @@ form
   .input-wrap
     position: relative
     float: left
-    background: $purple
+    background: $light-purple
 
     input
       padding: 2.75em 20px 2em
@@ -268,7 +213,7 @@ form
       padding: .75em 20px
       background: lighten($grey, 2%)
       &:hover
-        background: $purple
+        background: $light-purple
 
     label
       position: absolute
@@ -282,34 +227,56 @@ form
       transform: translate3d(0, 0, 0)
       transition: all 0.2s ease-in-out
 
-.input-wrap-1of3
-  width: 33.33%
-  border-right: 1px solid $purple
 
-.input-wrap-2of3
-  display: flex
-  float: left
-  width: 66.66%
+//INPUT TYPE NUMBER STYLES////////////////
 
+input[type=number]
+  -moz-appearance: textfield
 
-.small-input-1of3
-  width: 33%
+input[type="number"]:hover,
+input[type="number"]:focus
+  -moz-appearance: number-input
 
+//FORM RADIO STYLES/////////////////////
 
-.small-input-2of3
-  width: 67%
-  margin-left: 1px
-
-.small-input-1of2
+.radio-wrap
   width: 50%
+  float: left
+  border: 1px solid $grey
+  padding: 1.5em
+  background: $light-purple
+  input[type="radio"]
+    display: none
+
+input[type="radio"] + label em
+  display: inline-block
+  width: 22px
+  height: 22px
+  padding: 2px
+  margin: 0px 8px 0 0
+  vertical-align: middle
+  cursor: pointer
+  border-radius: 50%
+  border: 2px solid #a79ebc
+  float: left
+
+input[type="radio"] + label em
+  background-color: #fff
+  transition: background .3s ease-in
+
+input[type="radio"]:checked + label em
+  background-color: #9787bf
+  box-shadow: inset -1px 1px 1px rgba(black, 25%)
+  border: 2px solid darken(#a79ebc, 2.5%)
+  box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1);
 
 
 
-//BTN STYLES
+//BTN STYLES/////////////////////
 .btn
   background: #A79EBC
   border: 1px solid darken(#A79EBC, 2.5%)
-  color: #FDFDFD
+  color: $main-bg
   font-size: 12px
   padding: 1.2rem 5rem
   text-transform: uppercase
@@ -350,7 +317,7 @@ input:focus
     font-size: 7px
 
 
-
+//FOOTER////////////////////
 footer
   padding: 0px
   display: flex
@@ -367,9 +334,7 @@ footer
     a
       font-weight: 700
 
-
-
-
+//SOCIAL ICONS FOOTER//////////////////////
 .social-footer-links
   display: flex
   flex-direction: row
@@ -381,7 +346,7 @@ footer
   display: inline-block
   background: #A79EBC
   background: $grey
-  border-left: 1px solid #fff
+  border-left: 1px solid $main-bg
   margin-top: 1px
   transition: background .3s ease-in-out, color .4s ease-in
   overflow: hidden
@@ -396,9 +361,5 @@ footer
   height: 24px
   fill: #A79EBC
 
-//sass --watch assets/sass/app.sass:main.css
-//sass --watch app.sass:main.css
-//sass app.sass main.css
-//sass --watch /assets/sass/app.sass main.css
 .angel-icon
   width: 20px

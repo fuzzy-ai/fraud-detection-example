@@ -87,14 +87,14 @@
         <h3>Help train this agent!</h3>
         <form id="feedback-form" method="post">
           <p>Was this intended as a <strong>fraudulent transaction?</strong></p>
-          <div class="input-wrap">
+          <div class="input-wrap2">
             <div class="radio-wrap">
-              <input type="radio" name="feedback" value="0">
-              <span>No</span>
+              <input type="radio" name="feedback" value="0" id="input-no">
+              <label for="input-no">No<em></em></label>
             </div>
             <div class="radio-wrap">
-              <input type="radio" name="feedback" value="100">
-              <span>Yes</span>
+              <input type="radio" name="feedback" value="100" id="input-yes">
+              <label for="input-yes">Yes<em></em></label>
             </div>
           </div>
           <button type="submit" class="btn">Send</button>

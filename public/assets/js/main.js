@@ -5,6 +5,10 @@ var IPGeo;
 var phoneGeo;
 
 $(function() {
+  $('#signup-date').datetimepicker({
+    timepicker:false,
+    format:'Y-m-d'
+  });
   $('#results-description').hide();
   $('#feedback').hide();
 

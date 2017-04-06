@@ -60,12 +60,12 @@ module.exports =
       "high": [10, 15, 20]
       "very high": [15, 20]
   rules: [
-    '''userAgeInDays DECREASES likelihood'''
-    '''priceDifference INCREASES likelihood'''
-    '''shippingDistance INCREASES likelihood'''
-    '''IPDistance INCREASES likelihood'''
-    '''phoneDistance INCREASES likelihood'''
-    '''shippingOption INCREASES likelihood'''
-    '''numberPreviousFromIP INCREASES likelihood'''
-    '''numberPreviousShipping INCREASES likelihood'''
+    '''userAgeInDays DECREASES likelihood WITH 1.0'''
+    '''priceDifference INCREASES likelihood WITH 0.5'''
+    '''shippingDistance INCREASES likelihood WITH 1.0'''
+    '''IPDistance INCREASES likelihood WITH 0.75'''
+    '''phoneDistance INCREASES likelihood WITH 0.5'''
+    '''shippingOption INCREASES likelihood WITH 1.0'''
+    '''numberPreviousFromIP INCREASES likelihood WITH 0.5'''
+    '''numberPreviousShipping INCREASES likelihood WITH 1.0'''
   ]

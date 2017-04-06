@@ -18,11 +18,11 @@ module.exports =
       earlier: [7, 15, 30]
       before: [15, 30, 90]
     priceDifference:
-      veryLow: [-50, -25]
-      low: [-50, -25, 0]
-      medium: [-25, 0, 25]
-      high: [0, 25, 50]
-      veryHigh: [25, 50]
+      veryLow: [0, 25]
+      low: [0, 25, 50]
+      medium: [25, 50, 75]
+      high: [50, 75, 100]
+      veryHigh: [75, 100]
     shippingDistance:
       veryLow: [0, 10]
       low: [0, 10, 50]

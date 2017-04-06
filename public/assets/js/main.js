@@ -61,7 +61,7 @@ $(function() {
     }
 
     if ($('#purchase-price').val() && $('#avg-price').val()) {
-      inputs['priceDifference'] = $('#purchase-price').val() - $('#avg-price').val();
+      inputs['priceDifference'] = Math.max($('#purchase-price').val() - $('#avg-price').val(), 0);
     }
 
     switch ($('#shipping-option').val()) {

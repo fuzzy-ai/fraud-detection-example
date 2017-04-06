@@ -5,12 +5,11 @@ var IPGeo;
 var phoneGeo;
 
 $(function() {
+  resetForm();
   $('#signup-date').datetimepicker({
     timepicker:false,
     format:'Y-m-d'
   });
-  $('#results-description').hide();
-  $('#feedback').hide();
 
   var billing = document.getElementById('billing-address');
   var autocompleteBilling = new google.maps.places.Autocomplete(billing);
@@ -100,7 +99,10 @@ $(function() {
         $('#big-num span').html(likelihood);
         $('#results-description').show();
         $('#feedback').show();
-      }
+      },
+      error: function () {
+        setMessage('Something went wrong.', 'error')
+      }      
     });
     $('html, body').animate({
       scrollTop: $(".results").offset().top
@@ -118,9 +120,27 @@ $(function() {
         data: JSON.stringify(feedback),
         contentType: 'application/json',
         success: function(data) {
-          alert('Thanks for the feedback!');
+          setMessage('Thanks for the feedback!');
+          resetForm();
+        },
+        error: function () {
+          setMessage('Something went wrong.', 'error')
         }
       });
     }
   });
 });
+
+function resetForm() {
+  $('#results-description').hide();
+  $('#feedback').hide();
+  lastEvalID = null;
+  billingGeo = null;
+  shippingGeo = null;
+  IPGeo = null;
+  phoneGeo = null;
+}
+
+function setMessage(message, type='success') {
+  $('#messages').html('<p class="'+ type +'">'+ message + '</p>');
+}

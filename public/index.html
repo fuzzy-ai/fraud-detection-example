@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <title>Fraud detection</title>
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="/assets/jquery.datetimepicker.min.css">
+  <link rel="stylesheet" href="/assets/cal.css">
+
+  <!-- <link rel="stylesheet" href="/assets/jquery.datetimepicker.min.css"> -->
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script type="text/javascript" src="//maps.google.com/maps/api/js?libraries=geometry,places&key=AIzaSyDTxsWmQ6Xrr0hHHNk-KtyGmPcCOKVxNUY"></script>
-  <script type="text/javascript" src="/assets/jquery.datetimepicker.full.min.js"></script>
+
+  <script type="text/javascript" src="assets/bootstrap-datepicker.min.js"></script>
+
+
+
+  <!-- <script type="text/javascript" src="/assets/jquery.datetimepicker.full.min.js"></script> -->
   <script src="https://use.typekit.net/ttr5hbx.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
@@ -25,85 +33,90 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div><!-- end intro text -->
 <div class="fuz-wrapper">
-  <div id="messages"></div>
   <div class="credit-card pane">
-      <form method="post" id="fraud-form">
-        <div class="input-wrap">
-          <input type="text" id="signup-date" name="signup_date" placeholder="YYYY-MM-DD" />
-          <label for="signup-date" class="upper">User Signup Date</label>
-        </div>
-        <div class="input-wrap">
-          <input type="text" id="billing-address" name="billing_address" />
-          <label for="billing-address" class="upper">Billing Address</label>
-        </div>
-        <div class="input-wrap">
-          <input type="text" id="shipping-address" name="shipping_address" />
-          <label for="shipping-address" class="upper">Shipping Address</label>
-        </div>
-        <div class="input-wrap">
-          <input type="text" id="ip-address" name="ip_address" />
-          <label for="ip-address" class="upper">IP Address City</label>
-        </div>
-        <div class="input-wrap">
-          <input type="text" id="phone-address" name="phone_address" />
-          <label for="phone-address" class="upper">Phone Number City</label>
-        </div>
-        <div class="input-wrap">
-          <div class="num-wrapper"><input type="number" id="avg-price" name="avg_price" step="any" /></div>
-          <label for="avg-price" class="upper">Merchant’s Average Purchase Price</label>
-        </div>
-        <div class="input-wrap">
-          <div class="num-wrapper"><input type="number" id="purchase-price" name="purchase_price" step="any" /></div>
-          <label for="purchase-price" class="upper">Total Price for Current Purchase</label>
-        </div>
-        <div class="input-wrap">
-          <select id="shipping-option" name="shipping_option">
-            <option value="standard">Standard</option>
-            <option value="express">Express</option>
-            <option value="next_day">Next Day</option>
-          </select>
-          <label for="shipping-option" class="upper">Shipping Option</label>
-        </div>
-        <div class="input-wrap">
-          <div class="num-wrapper"><input type="number" id="ip-transactions" name="ip_transactions" /></div>
-          <label for="ip-transactions" class="upper">Number of Previous Transactions from Current IP</label>
-        </div>
-        <div class="input-wrap">
-          <div class="num-wrapper"><input type="number" id="address-transactions" name="address_transactions" /></div>
-          <label for="address-transactions" class="upper">Number of Previous Transactions Shipped to Same Address</label>
-        </div>
+    <form method="post" id="fraud-form">
+      <div class="input-wrap form-group">
+        <input type="text" id="signup-date" class="form-control" name="signup_date" data-provide="datepicker" data-date-format="yyyy/mm/dd" placeholder="YYYY-MM-DD" />
 
-        <button class="btn" type="submit">Submit</button>
+        <label for="signup-date" class="upper">User Signup Date</label>
+
+        <div class="bdc" style="position:relative"></div>
+
+      </div>
+      <div class="input-wrap">
+        <input type="text" id="billing-address" name="billing_address" />
+        <label for="billing-address" class="upper">Billing Address</label>
+
+      </div>
+      <div class="input-wrap">
+        <input type="text" id="shipping-address" name="shipping_address" />
+        <label for="shipping-address" class="upper">Shipping Address</label>
+      </div>
+      <div class="input-wrap">
+        <input type="text" id="ip-address" name="ip_address" />
+        <label for="ip-address" class="upper">IP Address City</label>
+      </div>
+      <div class="input-wrap">
+        <input type="text" id="phone-address" name="phone_address" />
+        <label for="phone-address" class="upper">Phone Number City</label>
+      </div>
+      <div class="input-wrap">
+        <div class="num-wrapper"><input type="number" id="avg-price" name="avg_price" step="any" /></div>
+        <label for="avg-price" class="upper">Merchant’s Average Purchase Price</label>
+      </div>
+      <div class="input-wrap">
+        <div class="num-wrapper"><input type="number" id="purchase-price" name="purchase_price" step="any" /></div>
+        <label for="purchase-price" class="upper">Total Price for Current Purchase</label>
+      </div>
+      <div class="input-wrap">
+        <select id="shipping-option" name="shipping_option">
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+          <option value="next_day">Next Day</option>
+        </select>
+        <label for="shipping-option" class="upper">Shipping Option</label>
+      </div>
+      <div class="input-wrap">
+        <div class="num-wrapper"><input type="number" id="ip-transactions" name="ip_transactions" /></div>
+        <label for="ip-transactions" class="upper">Number of Previous Transactions from Current IP</label>
+      </div>
+      <div class="input-wrap">
+        <div class="num-wrapper"><input type="number" id="address-transactions" name="address_transactions" /></div>
+        <label for="address-transactions" class="upper">Number of Previous Transactions Shipped to Same Address</label>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="results pane">
+    <h3>Results</h3>
+    <div id="results-description">
+      <div id="big-num-wrapper">
+        <div id="big-num"><span></span><em class="percent">%</em></div>
+      </div>
+      <div class="results-description-text">
+        <p>Based on your inputs, there is a <span class="accent"><span id="results-value"></span>%</span> chance this transaction was fraudulent.</p>
+      </div>
+    </div>
+    <div id="feedback">
+      <h3>Help train this agent!</h3>
+      <form id="feedback-form" method="post">
+        <p>Was this intended as a <strong>fraudulent transaction?</strong></p>
+        <div class="input-wrap2">
+          <div class="radio-wrap">
+            <input type="radio" name="feedback" value="0" id="input-no">
+            <label for="input-no">No<em></em></label>
+          </div>
+          <div class="radio-wrap">
+            <input type="radio" name="feedback" value="100" id="input-yes">
+            <label for="input-yes">Yes<em></em></label>
+          </div>
+        </div>
+        <button type="submit" class="btn">Send</button>
       </form>
     </div>
-    <div class="results pane">
-      <h3>Results</h3>
-      <div id="results-description">
-        <div id="big-num-wrapper">
-          <div id="big-num"><span></span><em class="percent">%</em></div>
-        </div>
-        <div class="results-description-text">
-          <p>Based on your inputs, there is a <span class="accent"><span id="results-value"></span>%</span> chance this transaction was fraudulent.</p>
-        </div>
-      </div>
-      <div id="feedback">
-        <h3>Help train this agent!</h3>
-        <form id="feedback-form" method="post">
-          <p>Was this intended as a <strong>fraudulent transaction?</strong></p>
-          <div class="input-wrap2">
-            <div class="radio-wrap">
-              <input type="radio" name="feedback" value="0" id="input-no">
-              <label for="input-no">No<em></em></label>
-            </div>
-            <div class="radio-wrap">
-              <input type="radio" name="feedback" value="100" id="input-yes">
-              <label for="input-yes">Yes<em></em></label>
-            </div>
-          </div>
-          <button type="submit" class="btn">Send</button>
-        </form>
-      </div>
-    </div>
+    <div id="messages"></div>
+  </div>
 
 </div><!-- end fuz wrapper -->
 

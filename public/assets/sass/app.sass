@@ -1,19 +1,53 @@
 @import "reset"
 
+//MIXINS/////////////////////////
 =centerer
   position: absolute
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
 
-//vars
+//ANIMATIONS////////////////////
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fadeInDown
+  0%
+    opacity: 0
+    transform: translate3d(0, -3000px, 0)
+  100%
+    opacity: 1
+    transform: none
+//VARS///////////////////////////////////////
 
 //COLORS////////////////////////
 $light-purple: #E4E2EB
-$grey: #f5f4f7
+//$light-purple: #f1f0f5
+$light-purple: #e0dee7
+$light-purple: darken(#F3F1F6,1%)
+//$light-purple: #E0DFE8
+$light-purple: #e3e2e8
+$light-purple: #e1e5ee
+
+$mid-purple: #e9ecf1
+$mid-purple: #edeff3
+$mid-purple: #e1e5ee
+$mid-purple: #ebedf3
+
+// $mid-purple: #E3E8EE
+// $mid-purple: darken(#F5F7FB, 2.5%)
+// $mid-purple: #eaedf2
+
+
+$grey: #f4f3f7
+$grey: darken(#f5f7fb, .5%)
+
 $main-bg: #FAFBF3
 
-//Typography///////////////////
+//TYPOGRAPHY///////////////////
 $condensed: "brandon-grotesque", "refrigerator-deluxe", "Proxima-nova", sans-serif
 $text: "proxima-nova", "Proxima Nova", helvetica, arial
 
@@ -32,6 +66,10 @@ body
   overflow-x: hidden
   margin: 10px
   padding: 80px 80px
+
+::selection
+  background: #A79EBC
+  color: $main-bg
 
 p
   margin-bottom: 22px
@@ -54,12 +92,20 @@ a
   img
     width: 100px
 
+// .xdsoft_calendar
+//   display: block !important
+//   background: $main-bg
+//   border: 1px solid $light-purple
+//   padding: 10px
+//   z-index: 1000
+
+
 .arrow
   fill: transparent
   width: 12px
   height: 12px
   stroke: #57546c
-  stroke-width: 4
+  stroke-width: 6
   opacity: 0
   transform: translateX(0px)
   transition: all .3s ease-in-out
@@ -97,7 +143,7 @@ h3
 
 
 
-//PAGE INTRO///////////
+//PAGE INTRO/////////////////
 .intro
   width: 50%
   margin-bottom: 44px
@@ -123,10 +169,9 @@ h3
   flex: 1
   padding: 40px
 
-
 .credit-card
-  background: $light-purple
-  border-right: 1px solid #fff
+  background: $mid-purple
+  border-right: 1px solid darken($mid-purple, 1.5%)
   h3
     &::before
       content: ""
@@ -139,6 +184,11 @@ h3
 .results
   flex-direction: column
   background: $grey
+  border-left: 1px solid $main-bg
+
+
+.results *
+  animation: fadeIn .9s ease-in
 
 
 #results-description
@@ -170,6 +220,9 @@ h3
     align-items: center
     justify-content: center
 
+
+
+
 //FORM STYLES////////////////////////////
 
 form
@@ -182,7 +235,7 @@ form
   .input-wrap
     position: relative
     float: left
-    background: $light-purple
+    background: $mid-purple
 
     input
       padding: 2.75em 20px 2em
@@ -190,7 +243,7 @@ form
       width: 100%
       border: none
       margin: 0 0 1px
-      background: lighten($grey, 2%)
+      background: lighten($grey, 2.75%)
       color: #A79EBC
       transition: all .3s ease-in
 
@@ -221,7 +274,7 @@ form
       left: 20px
       color: lighten(#57546c, 2%)
       z-index: 100
-      font-size: 8px
+      font-size: 8.5px
       text-transform: uppercase
       letter-spacing: 2px
       transform: translate3d(0, 0, 0)
@@ -261,11 +314,11 @@ input[type="radio"] + label em
   float: left
 
 input[type="radio"] + label em
-  background-color: #fff
+  background-color: $main-bg
   transition: background .3s ease-in
 
 input[type="radio"]:checked + label em
-  background-color: #9787bf
+  background-color: #706D87
   box-shadow: inset -1px 1px 1px rgba(black, 25%)
   border: 2px solid darken(#a79ebc, 2.5%)
   box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1);
@@ -274,7 +327,7 @@ input[type="radio"]:checked + label em
 
 //BTN STYLES/////////////////////
 .btn
-  background: #A79EBC
+  background: #8986A2
   border: 1px solid darken(#A79EBC, 2.5%)
   color: $main-bg
   font-size: 12px
@@ -357,9 +410,22 @@ footer
 
 .social-icon
   @include centerer
-  width: 24px
-  height: 24px
+  width: 20px
+  height: 20px
   fill: #A79EBC
 
 .angel-icon
   width: 20px
+
+#messages
+  position: relative
+  top: 80px
+
+
+  p
+    animation: fadeInDown 1s cubic-bezier(.67,.49,0,.96)
+    background: #dcdeea
+    padding: 20px
+    border: 2px solid $main-bg
+    margin-bottom: 0
+    font-size: 18px

@@ -5,11 +5,8 @@ var IPGeo;
 var phoneGeo;
 
 $(function() {
-  resetForm();
-  $('#signup-date').datetimepicker({
-    timepicker:false,
-    format:'Y-m-d'
-  });
+  $('#results-description').hide();
+  $('#feedback').hide();
 
   var billing = document.getElementById('billing-address');
   var autocompleteBilling = new google.maps.places.Autocomplete(billing);
@@ -64,7 +61,7 @@ $(function() {
     }
 
     if ($('#purchase-price').val() && $('#avg-price').val()) {
-      inputs['priceDifference'] = Math.max($('#purchase-price').val() - $('#avg-price').val(), 0);
+      inputs['priceDifference'] = $('#purchase-price').val() - $('#avg-price').val();
     }
 
     switch ($('#shipping-option').val()) {
@@ -99,10 +96,7 @@ $(function() {
         $('#big-num span').html(likelihood);
         $('#results-description').show();
         $('#feedback').show();
-      },
-      error: function () {
-        setMessage('Something went wrong.', 'error')
-      }      
+      }
     });
     $('html, body').animate({
       scrollTop: $(".results").offset().top
@@ -120,27 +114,19 @@ $(function() {
         data: JSON.stringify(feedback),
         contentType: 'application/json',
         success: function(data) {
-          setMessage('Thanks for the feedback!');
-          resetForm();
-        },
-        error: function () {
-          setMessage('Something went wrong.', 'error')
+          alert('Thanks for the feedback!');
         }
       });
     }
   });
 });
 
-function resetForm() {
-  $('#results-description').hide();
-  $('#feedback').hide();
-  lastEvalID = null;
-  billingGeo = null;
-  shippingGeo = null;
-  IPGeo = null;
-  phoneGeo = null;
-}
-
-function setMessage(message, type='success') {
-  $('#messages').html('<p class="'+ type +'">'+ message + '</p>');
-}
+$(function(){
+  $('#signup-date').datepicker({
+    todayHighlight: true,
+     orientation: "bottom left",
+     format: "yy/mm/dd",
+    container: ".bdc"
+    //container: console.log($(this).datepicker())
+  });
+});

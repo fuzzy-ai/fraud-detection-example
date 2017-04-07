@@ -32,7 +32,7 @@ $mid-purple: #E4E5E9
 
 $grey: #FDFEF9
 
-$main-bg: darken(#FAFBF3, .5%)
+$main-bg: darken(#FAFBF3, .75%)
 
 
 //TYPOGRAPHY///////////////////
@@ -46,7 +46,8 @@ html
 
 body
   background: $main-bg
-  //background-image: linear-gradient(to bottom, #fafbf3 0%,#ffffff 100%);
+  //background-image: linear-gradient(to bottom, $main-bg 0%,darken($main-bg,1.5%) 100%);
+  border: 1px solid #2E2C42
   font-family: $text
   letter-spacing: .5px
   font-size: 16px
@@ -153,7 +154,7 @@ h3
 
 .credit-card
   background: $mid-purple
-  border: 1px solid darken($mid-purple, 1.5%)
+  border: 1px solid darken($mid-purple, 5%)
   h3
     &::before
       content: ""
@@ -166,7 +167,8 @@ h3
 .results
   flex-direction: column
   background: $grey
-  border-right: 1px solid lighten($main-bg, 1.5%)
+  border-left: 1px solid #fff
+  margin-left: 1px
 
 #results-description
   animation: fadeIn 1s ease-in

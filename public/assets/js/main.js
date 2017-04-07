@@ -168,7 +168,7 @@ $(function() {
     todayHighlight: true,
     orientation: "bottom left",
     format: "yyyy-mm-dd",
-    container: ".bdc"
+    container: ".fuzzy-cal"
   });
 });
 
@@ -185,7 +185,6 @@ function setMessage(message, type) {
   }, 500);
 }
 
-
 let fillRandom = document.querySelector('#fill-random');
 
 fillRandom.addEventListener('click', function(){
@@ -193,7 +192,6 @@ fillRandom.addEventListener('click', function(){
     scrollTop: $("#submit-btn").offset().top
   }, 1500);
 })
-
 
 var randomLocations = [
   {name: 'Toronto, ON, Canada', lat: 43.653226, lng: -79.3831843},

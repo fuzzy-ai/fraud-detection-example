@@ -125,7 +125,7 @@ $(function() {
         data: JSON.stringify(feedback),
         contentType: 'application/json',
         success: function(data) {
-          setMessage('Thanks for the feedback!');
+          setMessage('Thanks for the feedback!', 'success');
           resetForm();
         },
         error: function () {
@@ -144,7 +144,7 @@ $(function() {
 
     var randomShipping = randomLocations[Math.floor(Math.random() * randomLocations.length)];
     $('#shipping-address').val(randomShipping['name']);
-    billingGeo = new google.maps.LatLng(randomShipping['lat'], randomShipping['lng']);
+    shippingGeo = new google.maps.LatLng(randomShipping['lat'], randomShipping['lng']);
 
     var randomIP = randomLocations[Math.floor(Math.random() * randomLocations.length)];
     $('#ip-address').val(randomIP['name']);
@@ -163,15 +163,12 @@ $(function() {
     $('#address-transactions').val(Math.floor(Math.random() * 20));
 
   });
-});
 
-$(function(){
   $('#signup-date').datepicker({
     todayHighlight: true,
-     orientation: "bottom left",
-     format: "yyyy-mm-dd",
+    orientation: "bottom left",
+    format: "yyyy-mm-dd",
     container: ".bdc"
-    //container: console.log($(this).datepicker())
   });
 });
 
@@ -179,13 +176,9 @@ function resetForm() {
   $('#results-description').hide();
   $('#feedback').hide();
   lastEvalID = null;
-  billingGeo = null;
-  shippingGeo = null;
-  IPGeo = null;
-  phoneGeo = null;
 }
 
-function setMessage(message, type='success') {
+function setMessage(message, type) {
   $('#messages').html('<p class="'+ type +'">'+ message + '</p>');
   $('html, body').animate({
     scrollTop: $(".results").offset().top

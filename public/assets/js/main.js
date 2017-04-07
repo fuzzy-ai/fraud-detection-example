@@ -39,7 +39,16 @@ $(function() {
   $('#fraud-form').submit(function(e) {
     e.preventDefault();
 
-    var inputs = {};
+    var inputs = {
+      userAgeInDays: 0,
+      shippingDistance: 0,
+      IPDistance: 0,
+      phoneDistance: 0,
+      priceDifference: 0,
+      shippingOption: 1,
+      numberPreviousFromIP: 0,
+      numberPreviousShipping: 0
+    };
 
     if ($('#signup-date').val()) {
       var signup = moment($('#signup-date').val());
@@ -82,7 +91,7 @@ $(function() {
     if ($('#address-transactions').val()) {
       inputs['numberPreviousShipping'] = parseInt($('#address-transactions').val());
     }
-
+    $('#messages').html('');
     $.ajax({
       method: "POST",
       url: "/data/evaluate",
@@ -125,6 +134,35 @@ $(function() {
       });
     }
   });
+
+  $('#fill-random').on('click', function(e) {
+    e.preventDefault();
+
+    var randomBilling = randomLocations[Math.floor(Math.random() * randomLocations.length)];
+    $('#billing-address').val(randomBilling['name']);
+    billingGeo = new google.maps.LatLng(randomBilling['lat'], randomBilling['lng']);
+
+    var randomShipping = randomLocations[Math.floor(Math.random() * randomLocations.length)];
+    $('#shipping-address').val(randomShipping['name']);
+    billingGeo = new google.maps.LatLng(randomShipping['lat'], randomShipping['lng']);
+
+    var randomIP = randomLocations[Math.floor(Math.random() * randomLocations.length)];
+    $('#ip-address').val(randomIP['name']);
+    IPGeo = new google.maps.LatLng(randomIP['lat'], randomIP['lng']);
+
+    var randomPhone = randomLocations[Math.floor(Math.random() * randomLocations.length)];
+    $('#phone-address').val(randomPhone['name']);
+    phoneGeo = new google.maps.LatLng(randomPhone['lat'], randomPhone['lng']);
+
+    var start = moment('2016-01-01');
+    var randomDate = moment(start + Math.random() * (moment() - start ));
+    $('#signup-date').val(randomDate.format('YYYY-MM-DD'));
+    $('#avg-price').val((Math.random() * 100).toFixed(2));
+    $('#purchase-price').val((Math.random() * 100).toFixed(2));
+    $('#ip-transactions').val(Math.floor(Math.random() * 20));
+    $('#address-transactions').val(Math.floor(Math.random() * 20));
+
+  });
 });
 
 $(function(){
@@ -153,3 +191,12 @@ function setMessage(message, type='success') {
     scrollTop: $(".results").offset().top
   }, 500);
 }
+
+var randomLocations = [
+  {name: 'Toronto, ON, Canada', lat: 43.653226, lng: -79.3831843},
+  {name: 'Montreal, QC, Canada', lat: 45.5016889, lng: -73.567256},
+  {name: 'San Francisco, CA, USA', lat: 37.7749295, lng: -122.4194155},
+  {name: 'New York, NY, USA', lat: 40.7127837, lng: -74.0059413},
+  {name: 'Paris, France', lat: 48.856614, lng: 2.3522219},
+  {name: 'Beijing, China', lat: 39.904211, lng: 116.407395}
+];

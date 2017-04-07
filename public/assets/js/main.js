@@ -170,6 +170,16 @@ $(function() {
     format: "yyyy-mm-dd",
     container: ".fuzzy-cal"
   });
+
+  var fillRandom = document.querySelector('#fill-random');
+
+  fillRandom.addEventListener('click', function(){
+    $('html, body').animate({
+      scrollTop: $("#submit-btn").offset().top
+    }, 1500);
+  })
+
+
 });
 
 function resetForm() {
@@ -184,14 +194,6 @@ function setMessage(message, type) {
     scrollTop: $(".results").offset().top
   }, 500);
 }
-
-let fillRandom = document.querySelector('#fill-random');
-
-fillRandom.addEventListener('click', function(){
-  $('html, body').animate({
-    scrollTop: $("#submit-btn").offset().top
-  }, 1500);
-})
 
 var randomLocations = [
   {name: 'Toronto, ON, Canada', lat: 43.653226, lng: -79.3831843},

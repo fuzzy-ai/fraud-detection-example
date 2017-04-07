@@ -5,8 +5,7 @@ var IPGeo;
 var phoneGeo;
 
 $(function() {
-  $('#results-description').hide();
-  $('#feedback').hide();
+  resetForm();
 
   var billing = document.getElementById('billing-address');
   var autocompleteBilling = new google.maps.places.Autocomplete(billing);
@@ -61,7 +60,7 @@ $(function() {
     }
 
     if ($('#purchase-price').val() && $('#avg-price').val()) {
-      inputs['priceDifference'] = $('#purchase-price').val() - $('#avg-price').val();
+      inputs['priceDifference'] = Math.max($('#purchase-price').val() - $('#avg-price').val(), 0);
     }
 
     switch ($('#shipping-option').val()) {
@@ -96,6 +95,9 @@ $(function() {
         $('#big-num span').html(likelihood);
         $('#results-description').show();
         $('#feedback').show();
+      },
+      error: function () {
+        setMessage('Something went wrong.', 'error');
       }
     });
     $('html, body').animate({
@@ -106,7 +108,7 @@ $(function() {
   $('#feedback-form').submit(function(e) {
     e.preventDefault();
     var likelihood = parseInt($('input[type=radio]:checked').val());
-    if (lastEvalID && likelihood) {
+    if (lastEvalID) {
       var feedback = {likelihood: likelihood}
       $.ajax({
         method: "POST",
@@ -114,7 +116,11 @@ $(function() {
         data: JSON.stringify(feedback),
         contentType: 'application/json',
         success: function(data) {
-          alert('Thanks for the feedback!');
+          setMessage('Thanks for the feedback!');
+          resetForm();
+        },
+        error: function () {
+          setMessage('Something went wrong.', 'error');
         }
       });
     }
@@ -125,8 +131,25 @@ $(function(){
   $('#signup-date').datepicker({
     todayHighlight: true,
      orientation: "bottom left",
-     format: "yy/mm/dd",
+     format: "yyyy-mm-dd",
     container: ".bdc"
     //container: console.log($(this).datepicker())
   });
 });
+
+function resetForm() {
+  $('#results-description').hide();
+  $('#feedback').hide();
+  lastEvalID = null;
+  billingGeo = null;
+  shippingGeo = null;
+  IPGeo = null;
+  phoneGeo = null;
+}
+
+function setMessage(message, type='success') {
+  $('#messages').html('<p class="'+ type +'">'+ message + '</p>');
+  $('html, body').animate({
+    scrollTop: $(".results").offset().top
+  }, 500);
+}

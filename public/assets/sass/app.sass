@@ -36,16 +36,20 @@ $mid-purple: #e9ecf1
 $mid-purple: #edeff3
 $mid-purple: #e1e5ee
 $mid-purple: #ebedf3
+// $mid-purple: #eaedef
+// $mid-purple: #e7e5e4
 
 // $mid-purple: #E3E8EE
 // $mid-purple: darken(#F5F7FB, 2.5%)
-// $mid-purple: #eaedf2
+$mid-purple: #E1E5EE
 
 
 $grey: #f4f3f7
 $grey: darken(#f5f7fb, .5%)
+$grey: #FFFFFF
 
 $main-bg: #FAFBF3
+$main-bg: lighten(#f2f4f7, 1%)
 
 //TYPOGRAPHY///////////////////
 $condensed: "brandon-grotesque", "refrigerator-deluxe", "Proxima-nova", sans-serif
@@ -58,6 +62,7 @@ html
 
 body
   background: $main-bg
+  //background-image: linear-gradient(to bottom, #fafbf3 0%,#ffffff 100%);
   font-family: $text
   letter-spacing: .5px
   font-size: 16px
@@ -171,7 +176,7 @@ h3
 
 .credit-card
   background: $mid-purple
-  border-right: 1px solid darken($mid-purple, 1.5%)
+  border: 1px solid darken($mid-purple, 1.5%)
   h3
     &::before
       content: ""
@@ -184,8 +189,7 @@ h3
 .results
   flex-direction: column
   background: $grey
-  border-left: 1px solid $main-bg
-
+  border-right: 1px solid lighten($main-bg, 1.5%)
 
 .results *
   animation: fadeIn .9s ease-in
@@ -420,12 +424,9 @@ footer
 #messages
   position: relative
   top: 80px
-
-
   p
     animation: fadeInDown 1s cubic-bezier(.67,.49,0,.96)
     background: #dcdeea
     padding: 20px
     border: 2px solid $main-bg
     margin-bottom: 0
-    font-size: 18px

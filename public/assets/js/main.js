@@ -176,10 +176,6 @@ function resetForm() {
   $('#results-description').hide();
   $('#feedback').hide();
   lastEvalID = null;
-  billingGeo = null;
-  shippingGeo = null;
-  IPGeo = null;
-  phoneGeo = null;
 }
 
 function setMessage(message, type) {

@@ -182,7 +182,7 @@ function resetForm() {
   phoneGeo = null;
 }
 
-function setMessage(message) {
+function setMessage(message, type) {
   $('#messages').html('<p class="'+ type +'">'+ message + '</p>');
   $('html, body').animate({
     scrollTop: $(".results").offset().top

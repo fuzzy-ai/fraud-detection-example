@@ -14,6 +14,7 @@
   100%
     opacity: 1
 
+
 @keyframes fadeInDown
   0%
     opacity: 0
@@ -24,27 +25,15 @@
 //VARS///////////////////////////////////////
 
 //COLORS////////////////////////
-$light-purple: #E4E2EB
-//$light-purple: #f1f0f5
-$light-purple: #e0dee7
-$light-purple: darken(#F3F1F6,1%)
-//$light-purple: #E0DFE8
-$light-purple: #e3e2e8
+
 $light-purple: #e1e5ee
 
-//$mid-purple: #ebedf3
 $mid-purple: #E4E5E9
 
-
-
-$grey: #f4f3f7
-$grey: darken(#f5f7fb, .5%)
-$grey: #FFFFFF
 $grey: #FDFEF9
 
-$main-bg: #FAFBF3
-//$main-bg: lighten(#f2f4f7, 1%)
-//$main-bg: #fafbf9
+$main-bg: darken(#FAFBF3, .5%)
+
 
 //TYPOGRAPHY///////////////////
 $condensed: "brandon-grotesque", "refrigerator-deluxe", "Proxima-nova", sans-serif
@@ -92,13 +81,6 @@ a
   img
     width: 100px
 
-// .xdsoft_calendar
-//   display: block !important
-//   background: $main-bg
-//   border: 1px solid $light-purple
-//   padding: 10px
-//   z-index: 1000
-
 
 .arrow
   fill: transparent
@@ -116,6 +98,7 @@ a
   position: absolute
   top: 40px
   right: 60px
+  font-family: $condensed
   text-transform: uppercase
   font-weight: 400
   letter-spacing: 2px
@@ -151,18 +134,17 @@ h3
     font-size: 80px
     text-transform: uppercase
     font-weight: 900
-    letter-spacing: -2px
+    letter-spacing: -1px
     line-height: .9em
     margin-bottom: 22px
-
-
+  p
+    margin-bottom: 11px
 
 .fuz-wrapper
   display: flex
   flex-direction: row
   flex-wrap: wrap
   width: 100%
-
 
 .pane
   display: flex
@@ -186,8 +168,13 @@ h3
   background: $grey
   border-right: 1px solid lighten($main-bg, 1.5%)
 
-.results *
-  animation: fadeIn .9s ease-in
+#results-description
+  animation: fadeIn 1s ease-in
+
+
+#feedback
+  animation: fadeIn 1s ease-in-out
+
 
 
 #results-description
@@ -420,7 +407,7 @@ footer
   position: relative
   top: 80px
   p
-    animation: fadeInDown 1s cubic-bezier(.67,.49,0,.96)
+    animation: fadeIn 2s cubic-bezier(.67,.49,0,.96)
     background: #dcdeea
     padding: 20px
     border: 2px solid $main-bg

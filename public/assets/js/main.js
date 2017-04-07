@@ -185,6 +185,16 @@ function setMessage(message, type) {
   }, 500);
 }
 
+
+let fillRandom = document.querySelector('#fill-random');
+
+fillRandom.addEventListener('click', function(){
+  $('html, body').animate({
+    scrollTop: $("#submit-btn").offset().top
+  }, 1500);
+})
+
+
 var randomLocations = [
   {name: 'Toronto, ON, Canada', lat: 43.653226, lng: -79.3831843},
   {name: 'Montreal, QC, Canada', lat: 45.5016889, lng: -73.567256},

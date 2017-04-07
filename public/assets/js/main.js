@@ -125,7 +125,7 @@ $(function() {
         data: JSON.stringify(feedback),
         contentType: 'application/json',
         success: function(data) {
-          setMessage('Thanks for the feedback!');
+          setMessage('Thanks for the feedback!', 'success');
           resetForm();
         },
         error: function () {
@@ -163,15 +163,12 @@ $(function() {
     $('#address-transactions').val(Math.floor(Math.random() * 20));
 
   });
-});
 
-$(function(){
   $('#signup-date').datepicker({
     todayHighlight: true,
-     orientation: "bottom left",
-     format: "yyyy-mm-dd",
+    orientation: "bottom left",
+    format: "yyyy-mm-dd",
     container: ".bdc"
-    //container: console.log($(this).datepicker())
   });
 });
 
@@ -185,7 +182,7 @@ function resetForm() {
   phoneGeo = null;
 }
 
-function setMessage(message, type='success') {
+function setMessage(message) {
   $('#messages').html('<p class="'+ type +'">'+ message + '</p>');
   $('html, body').animate({
     scrollTop: $(".results").offset().top

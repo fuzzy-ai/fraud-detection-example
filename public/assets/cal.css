@@ -7,6 +7,7 @@
  */
 .datepicker {
   /*border-radius: 4px;*/
+  background:#FFFFFF
   direction: ltr;
   border-bottom: 1px solid #EBEDF3;
 }

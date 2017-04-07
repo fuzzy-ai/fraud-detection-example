@@ -144,7 +144,7 @@ $(function() {
 
     var randomShipping = randomLocations[Math.floor(Math.random() * randomLocations.length)];
     $('#shipping-address').val(randomShipping['name']);
-    billingGeo = new google.maps.LatLng(randomShipping['lat'], randomShipping['lng']);
+    shippingGeo = new google.maps.LatLng(randomShipping['lat'], randomShipping['lng']);
 
     var randomIP = randomLocations[Math.floor(Math.random() * randomLocations.length)];
     $('#ip-address').val(randomIP['name']);

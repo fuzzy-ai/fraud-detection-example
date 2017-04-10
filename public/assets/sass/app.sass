@@ -28,12 +28,14 @@
 
 $light-purple: #e1e5ee
 
-$mid-purple: #E4E5E9
+$mid-purple: #EDEEF4
 
-$grey: #FDFEF9
+$grey: #F5F6F9
 
+$main-bg: #FEFEFE
 $main-bg: darken(#FAFBF3, .75%)
-
+$main-bg: #fcfcf7
+$main-bg: #fcfdf8
 
 //TYPOGRAPHY///////////////////
 $condensed: "brandon-grotesque", "refrigerator-deluxe", "Proxima-nova", sans-serif
@@ -46,7 +48,6 @@ html
 
 body
   background: $main-bg
-  //background-image: linear-gradient(to bottom, $main-bg 0%,darken($main-bg,1.5%) 100%);
   border: 1px solid #2E2C42
   font-family: $text
   letter-spacing: .5px
@@ -85,10 +86,10 @@ a
 
 .arrow
   fill: transparent
-  width: 12px
-  height: 12px
+  width: 10px
+  height: 10px
   stroke: #57546c
-  stroke-width: 6
+  stroke-width: 8
   opacity: 0
   transform: translateX(0px)
   transition: all .3s ease-in-out
@@ -101,9 +102,10 @@ a
   right: 60px
   font-family: $condensed
   text-transform: uppercase
-  font-weight: 400
-  letter-spacing: 2px
+  font-weight: 500
+  letter-spacing: 1.5px
   transition: all .3s ease-in-out
+  font-size: 14px
   &:hover
     .arrow
       transform: translateX(10px)
@@ -168,7 +170,6 @@ h3
   flex-direction: column
   background: $grey
   border-left: 1px solid #fff
-  margin-left: 1px
 
 #results-description
   animation: fadeIn 1s ease-in
@@ -176,8 +177,6 @@ h3
 
 #feedback
   animation: fadeIn 1s ease-in-out
-
-
 
 #results-description
   display: flex
@@ -207,8 +206,6 @@ h3
     display: flex
     align-items: center
     justify-content: center
-
-
 
 
 //FORM STYLES////////////////////////////
@@ -319,7 +316,7 @@ input[type="radio"]:checked + label em
   border: 1px solid darken(#A79EBC, 2.5%)
   color: $main-bg
   font-size: 12px
-  padding: 1rem 2rem
+  padding: 1.15rem 2rem
   text-transform: uppercase
   letter-spacing: .2em
   font-weight: 400
@@ -331,8 +328,6 @@ input[type="radio"]:checked + label em
     box-shadow: 0 0 0 5px #c2bcd1 inset, 0 0 0 150px rgba(#57546c, .5) inset
     border-color: darken(#A79EBC, 3%)
     color: lighten(#dcdeea, 5%)
-
-
 
 ::-webkit-input-placeholder  /* Chrome/Opera/Safari */
   color: lighten(#57546c, 35%)
@@ -369,7 +364,7 @@ footer
     margin-bottom: 0px
     padding: 20px 50px
     font-size: 10px
-    letter-spacing: 2px
+    letter-spacing: 2.5px
     line-height: 40px
     text-transform: uppercase
     a
@@ -381,8 +376,8 @@ footer
   flex-direction: row
 
 .box-icon
-  width: 80px
-  height: 80px
+  width: 84px
+  height: 84px
   position: relative
   display: inline-block
   background: #A79EBC

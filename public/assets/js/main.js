@@ -117,7 +117,9 @@ $(function() {
   $('#feedback-form').submit(function(e) {
     e.preventDefault();
     var likelihood = parseInt($('input[type=radio]:checked').val());
-    if (lastEvalID) {
+    if (isNaN(likelihood)) {
+      setMessage('Please select an option to provide feedback.');
+    } else if (lastEvalID) {
       var feedback = {likelihood: likelihood}
       $.ajax({
         method: "POST",

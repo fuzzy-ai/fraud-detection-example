@@ -62,7 +62,7 @@ module.exports =
   rules: [
     '''userAgeInDays DECREASES likelihood WITH 1.0'''
     '''priceDifference INCREASES likelihood WITH 0.5'''
-    '''shippingDistance INCREASES likelihood WITH 1.0'''
+    '''shippingDistance INCREASES likelihood WITH 0.5'''
     '''IPDistance INCREASES likelihood WITH 0.75'''
     '''phoneDistance INCREASES likelihood WITH 0.5'''
     '''shippingOption INCREASES likelihood WITH 1.0'''

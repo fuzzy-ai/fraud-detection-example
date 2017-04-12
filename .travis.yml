@@ -1,0 +1,24 @@
+sudo: required
+language: generic
+services:
+- docker
+env:
+  global:
+  - PATH=/usr/lib/google-cloud-sdk/bin:$PATH
+  - PROJECT=fraud-detection
+  - GCLOUD_PROJECT_ID=fuzzy-ai-lemonade-stand
+  - GCLOUD_ACCOUNT=travis-ci@fuzzy-ai-lemonade-stand.iam.gserviceaccount.com
+  - GCLOUD_CLUSTER=fraud-detection-cluster-1
+before_install:
+- openssl aes-256-cbc -K $encrypted_4d993f9f116e_key -iv $encrypted_4d993f9f116e_iv
+  -in client-secret.json.enc -out client-secret.json -d
+- docker build -t fuzzyai/$PROJECT .
+script:
+- docker run -t fuzzyai/$PROJECT npm test
+deploy:
+  provider: script
+  script: scripts/ci_deploy.sh
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: false

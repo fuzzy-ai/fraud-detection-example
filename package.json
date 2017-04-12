@@ -1,6 +1,6 @@
 {
   "name": "fraud-detection-example",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An exmaple Fuzzy.ai application to simulate intelligent fraud detection for credit card transactions",
   "scripts": {
     "build": "coffee -c -o lib src && coffee -c test && webpack -p",

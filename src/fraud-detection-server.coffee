@@ -8,6 +8,7 @@ Microservice = require 'fuzzy.ai-microservice'
 path = require 'path'
 
 agent = require './agent'
+version = require './version'
 
 class FraudDetectionServer extends Microservice
 
@@ -47,6 +48,8 @@ class FraudDetectionServer extends Microservice
   setupRoutes: (exp) ->
     exp.post '/data/evaluate', @_evaluate
     exp.post '/data/feedback/:evaluationID', @_feedback
+    exp.get '/version', (req, res, next) ->
+      res.json {name: 'fraud-detection', version: version}
 
   startDatabase: (callback) ->
     callback null

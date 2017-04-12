@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "An exmaple Fuzzy.ai application to simulate intelligent fraud detection for credit card transactions",
   "scripts": {
-    "install": "coffee -c -o lib src && webpack -p",
+    "install": "coffee -c -o lib src && coffee -c test && webpack -p",
     "clean": "rm -rf lib/* test/*.js",
     "dev": "coffee -r dotenv/config -w src/main.coffee",
     "start": "node lib/main.js",

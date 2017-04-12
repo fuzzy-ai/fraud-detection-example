@@ -6,5 +6,7 @@ RUN chmod +x /usr/local/bin/dumb-init
 EXPOSE 80
 EXPOSE 443
 
+RUN npm run build
+
 ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
 CMD ["npm", "start"]

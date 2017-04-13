@@ -1,6 +1,6 @@
 # Fuzzy.ai Fraud Detection Example
 
-An example using [Fuzzy.ai](https://fuzzy.ai) to detect fradulent credit card transactions.
+An example using [Fuzzy.ai](https://fuzzy.ai) to detect fradulent credit card transactions. To learn more, [read the blog post](https://blog.fuzzy.ai/2017/04/13/build-fraud-detection-into-your-apps/) about the project.
 
 ## Usage
 

@@ -22,6 +22,24 @@
   100%
     opacity: 1
     transform: none
+
+=pretab
+  @media only screen and (min-width: 640px)
+    @content
+
+=tab
+  @media only screen and (min-width: 768px)
+    @content
+
+=med
+  @media only screen and (min-width: 980px)
+    @content
+
+=xl
+  @media only screen and (min-width: 1080px)
+    @content
+
+
 //VARS///////////////////////////////////////
 
 //COLORS////////////////////////
@@ -56,8 +74,17 @@ body
   line-height: 1.8
   color: #57546c
   overflow-x: hidden
-  margin: 10px
-  padding: 80px 80px
+  margin: 5px
+  padding: 80px 20px
+  +pretab
+    margin: 10px
+    //padding: 40px 20px
+    //padding: 40px
+  +tab
+    padding: 80px 40px
+  +xl
+    padding: 80px
+
 
 ::selection
   background: #A79EBC
@@ -73,6 +100,7 @@ p
   display: block
   margin-bottom: 2px
 
+
 a
   color: #EB4F48
   text-decoration: none
@@ -82,36 +110,48 @@ a
 
 .logo
   img
+    width: 80px
+  +tab
     width: 100px
 
 
 .arrow
   fill: transparent
-  width: 10px
-  height: 10px
+  width: 8px
+  height: 8px
   stroke: #57546c
   stroke-width: 8
   opacity: 0
   transform: translateX(0px)
   transition: all .3s ease-in-out
+  +tab
+    width: 10px
+    height: 10px
 
 
 
 .signup
   position: absolute
-  top: 40px
-  right: 60px
+  top: 20px
+  right: 14px
   font-family: $condensed
   text-transform: uppercase
   font-weight: 500
   letter-spacing: 1.5px
   transition: all .3s ease-in-out
-  font-size: 14px
+  font-size: 12px
+  +tab
+    font-size: 13px
+    right: 40px
+    top: 40px
+  +xl
+    font-size: 14px
   &:hover
     .arrow
-      transform: translateX(10px)
+      transform: translateX(2px)
       opacity: 1
-
+      +tab
+        transform: translateX(10px)
 
 
 h3
@@ -132,32 +172,54 @@ h3
 
 //PAGE INTRO/////////////////
 .intro
-  width: 50%
+  width: 100%
   margin-bottom: 44px
+  +med
+    width: 50%
+
   h1
-    font-size: 80px
+    font-size: 40px
     text-transform: uppercase
     font-weight: 900
     letter-spacing: -1px
     line-height: .9em
     margin-bottom: 22px
+    +pretab
+      font-size: 64px
+    +tab
+      font-size: 80px
+
   p
     margin-bottom: 11px
+    font-size: 14px
+    +tab
+      font-size: 16px
+    +xl
+      font-size: 18px
 
 .fuz-wrapper
   display: flex
-  flex-direction: row
+  flex-direction: column
   flex-wrap: wrap
   width: 100%
+  +med
+    flex-direction: row
 
 .pane
   display: flex
   flex: 1
-  padding: 40px
+  padding: 10px
+  +pretab
+    padding: 20px
+  +tab
+    padding: 30px
+  +xl
+    padding: 40px
 
 .credit-card
   background: $mid-purple
-  border: 1px solid darken($mid-purple, 5%)
+  +tab
+    border: 1px solid darken($mid-purple, 5%)
   h3
     &::before
       content: ""
@@ -185,7 +247,7 @@ h3
   background: #fff
   margin-bottom: 44px
   .results-description-text
-    flex: 0 0 80%
+    //flex: 0 0 80%
     padding: 20px
     font-size: 14px
     background: $light-purple
@@ -260,11 +322,19 @@ form
       left: 20px
       color: lighten(#57546c, 2%)
       z-index: 100
-      font-size: 8.5px
+      font-size: 8px
+      line-height: 1.2
       text-transform: uppercase
-      letter-spacing: 2px
+      letter-spacing: 0.5px
       transform: translate3d(0, 0, 0)
       transition: all 0.2s ease-in-out
+      +pretab
+        letter-spacing: 1px
+      +xl
+        font-size: 8.5px
+        letter-spacing: 2px
+
+
 
 
 //INPUT TYPE NUMBER STYLES////////////////
@@ -316,8 +386,8 @@ input[type="radio"]:checked + label em
   background: #8986A2
   border: 1px solid darken(#A79EBC, 2.5%)
   color: $main-bg
-  font-size: 12px
-  padding: 1.15rem 2rem
+  font-size: 9px
+  padding: .75rem 1.25rem
   text-transform: uppercase
   letter-spacing: .2em
   font-weight: 400
@@ -325,10 +395,16 @@ input[type="radio"]:checked + label em
   border-radius: 2px
   transition: all .3s ease-in
   font-family: $condensed
+  +tab
+    font-size: 12px
+    padding: 1.15rem 2rem
   &:hover
-    box-shadow: 0 0 0 5px #c2bcd1 inset, 0 0 0 150px rgba(#57546c, .5) inset
+    box-shadow: 0 0 0 2px #c2bcd1 inset, 0 0 0 150px rgba(#57546c, .5) inset
     border-color: darken(#A79EBC, 3%)
     color: lighten(#dcdeea, 5%)
+    +tab
+      box-shadow: 0 0 0 4px #c2bcd1 inset, 0 0 0 150px rgba(#57546c, .5) inset
+
 
 ::-webkit-input-placeholder  /* Chrome/Opera/Safari */
   color: lighten(#57546c, 35%)
@@ -344,7 +420,7 @@ input:hover
   background: #fff !important
 
 
-input:focus
+input:focus, select:focus
   outline: none
   background: #fff !important
   + label
@@ -358,16 +434,26 @@ input:focus
 footer
   padding: 0px
   display: flex
-  flex-direction: row
+  flex-direction: column
   justify-content: space-between
   position: relative
+  +pretab
+    flex-direction: row
+
   .copyright
+    order: 2
     margin-bottom: 0px
-    padding: 20px 50px
+    padding: 20px 40px
     font-size: 10px
     letter-spacing: 2.5px
     line-height: 40px
     text-transform: uppercase
+    text-align: center
+    +pretab
+      text-align: left
+    +tab
+      padding: 20px 50px
+      order: 1
     a
       font-weight: 700
 
@@ -375,10 +461,13 @@ footer
 .social-footer-links
   display: flex
   flex-direction: row
+  order: 1
+  +pretab
+    order: 2
 
 .box-icon
-  width: 84px
-  height: 84px
+  width: 74px
+  height: 74px
   position: relative
   display: inline-block
   background: #A79EBC
@@ -387,6 +476,12 @@ footer
   margin-top: 1px
   transition: background .3s ease-in-out, color .4s ease-in
   overflow: hidden
+  +pretab
+    width: 70px
+    height: 70px
+  +med
+    width: 84px
+    height: 84px
   &:hover
     background: $main-bg
     svg
@@ -403,7 +498,9 @@ footer
 
 #messages
   position: relative
-  top: 80px
+  top: 0px
+  +tab
+    top: 80px
   p
     animation: fadeIn 2s cubic-bezier(.67,.49,0,.96)
     background: #dcdeea

@@ -104,6 +104,7 @@ $(function() {
         $('#big-num span').html(likelihood);
         $('#results-description').show();
         $('#feedback').show();
+        $('.result-heading').show();
       },
       error: function () {
         setMessage('Something went wrong.', 'error');
@@ -187,6 +188,7 @@ $(function() {
 function resetForm() {
   $('#results-description').hide();
   $('#feedback').hide();
+  $('.result-heading').hide();
   lastEvalID = null;
 }
 

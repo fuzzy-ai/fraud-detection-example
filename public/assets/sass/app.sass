@@ -14,7 +14,6 @@
   100%
     opacity: 1
 
-
 @keyframes fadeInDown
   0%
     opacity: 0
@@ -22,6 +21,8 @@
   100%
     opacity: 1
     transform: none
+
+//MEDIA QUERIES////////////////////////////
 
 =pretab
   @media only screen and (min-width: 640px)
@@ -39,21 +40,17 @@
   @media only screen and (min-width: 1080px)
     @content
 
+=dudeWtf
+  @media only screen and (min-width: 1920px)
+    @content
+
 
 //VARS///////////////////////////////////////
 
 //COLORS////////////////////////
-
 $light-purple: #e1e5ee
-
 $mid-purple: #EDEEF4
-
 $grey: #F5F6F9
-
-$main-bg: #FEFEFE
-$main-bg: darken(#FAFBF3, .75%)
-$main-bg: #fcfcf7
-$main-bg: #fcfdf8
 $main-bg: #FFFEF4
 
 //TYPOGRAPHY///////////////////
@@ -66,6 +63,7 @@ html
   background: #57546c
 
 body
+  animation: fadeIn .8s ease-in
   background: $main-bg
   border: 1px solid #2E2C42
   font-family: $text
@@ -77,13 +75,14 @@ body
   margin: 5px
   padding: 80px 20px
   +pretab
-    margin: 10px
-    //padding: 40px 20px
-    //padding: 40px
+    margin: 7.5px
   +tab
     padding: 80px 40px
+    margin: 10px
   +xl
     padding: 80px
+  +dudeWtf
+    padding: 120px  200px
 
 
 ::selection
@@ -113,6 +112,8 @@ a
     width: 80px
   +tab
     width: 100px
+  +dudeWtf
+    width: 120px
 
 
 .arrow
@@ -168,8 +169,6 @@ h3
     margin-right: 4px
 
 
-
-
 //PAGE INTRO/////////////////
 .intro
   width: 100%
@@ -188,6 +187,11 @@ h3
       font-size: 64px
     +tab
       font-size: 80px
+    +med
+      font-size: 84px
+    +dudeWtf
+      font-size: 110px
+
 
   p
     margin-bottom: 11px
@@ -196,8 +200,11 @@ h3
       font-size: 16px
     +xl
       font-size: 18px
+    +dudeWtf
+      font-size: 22px
 
 .fuz-wrapper
+  max-width: 1440px
   display: flex
   flex-direction: column
   flex-wrap: wrap
@@ -215,6 +222,8 @@ h3
     padding: 30px
   +xl
     padding: 40px
+  +dudeWtf
+    padding: 60px
 
 .credit-card
   background: $mid-purple
@@ -237,7 +246,6 @@ h3
 #results-description
   animation: fadeIn 1s ease-in
 
-
 #feedback
   animation: fadeIn 1s ease-in-out
 
@@ -247,7 +255,6 @@ h3
   background: #fff
   margin-bottom: 44px
   .results-description-text
-    //flex: 0 0 80%
     padding: 20px
     font-size: 14px
     background: $light-purple
@@ -291,9 +298,12 @@ form
       width: 100%
       border: none
       margin: 0 0 1px
-      background: lighten($grey, 2.75%)
+      background: lighten($grey, 1%)
       color: #A79EBC
       transition: all .3s ease-in
+      +dudeWtf
+        padding: 2.5em 20px 2.5em
+
 
     select
       outline: none
@@ -302,17 +312,18 @@ form
       width: 100%
       border: none
       margin: 0 0 1px
-      background: lighten($grey, 2%) URL('./images/arrow-down.svg') no-repeat 95% center
+      background: lighten($grey, 1%) URL('./images/arrow-down.svg') no-repeat 95% center
       background-size: 4%
       color: #A79EBC
       -webkit-appearance: none
       -moz-appearance: none
       border-radius: none
-
-
+      &:hover
+        background: #fff URL('./images/arrow-down.svg') no-repeat 95% center
+        background-size: 4%
     option
       padding: .75em 20px
-      background: lighten($grey, 2%)
+      background: lighten($grey, 1%)
       &:hover
         background: $light-purple
 
@@ -320,7 +331,7 @@ form
       position: absolute
       top: 10px
       left: 20px
-      color: lighten(#57546c, 2%)
+      color: lighten(#57546c, 1%)
       z-index: 100
       font-size: 8px
       line-height: 1.2
@@ -333,14 +344,16 @@ form
       +xl
         font-size: 8.5px
         letter-spacing: 2px
-
-
+      +dudeWtf
+        font-size: 9.5px
 
 
 //INPUT TYPE NUMBER STYLES////////////////
 
 input[type=number]
   -moz-appearance: textfield
+  background: lighten($grey, 1%)
+
 
 input[type="number"]:hover,
 input[type="number"]:focus
@@ -375,11 +388,8 @@ input[type="radio"] + label em
 
 input[type="radio"]:checked + label em
   background-color: #706D87
-  box-shadow: inset -1px 1px 1px rgba(black, 25%)
   border: 2px solid darken(#a79ebc, 2.5%)
   box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1);
-
-
 
 //BTN STYLES/////////////////////
 .btn
@@ -390,9 +400,9 @@ input[type="radio"]:checked + label em
   padding: .75rem 1.25rem
   text-transform: uppercase
   letter-spacing: .2em
-  font-weight: 400
+  font-weight: 500
   margin: 22px 0 0 0
-  border-radius: 2px
+  border-radius: 4px
   transition: all .3s ease-in
   font-family: $condensed
   +tab
@@ -411,7 +421,7 @@ input[type="radio"]:checked + label em
   font-size: 10px
   letter-spacing: 2px
 
-::-moz-placeholder  /* Firefox 19+ */
+::-moz-placeholder  /* FF 19+ */
   color: lighten(#57546c, 35%)
   font-size: 10px
   letter-spacing: 2px
@@ -507,3 +517,6 @@ footer
     padding: 20px
     border: 2px solid $main-bg
     margin-bottom: 0
+
+.line
+  display: block
